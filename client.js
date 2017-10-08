@@ -38,7 +38,7 @@ return totalCosts;
 //function for the math
 function calculateCosts(salary){
 var $currentTotal = parseInt($('span').text());
-salary= salary/12;
+salary= Math.round(salary/12);
 $currentTotal += salary;
 return $currentTotal;
 }
@@ -47,7 +47,8 @@ function removeButton(){
   var $buttonRow = $(this).parent().parent();
   var $rowData = $($buttonRow).children()[4];
   var $income = parseInt( $($rowData).text() );
-  $income = $income/12;
+  //removes income from totalCosts
+  $income = Math.round($income/12);
   totalCosts= totalCosts - $income;
   $('span').text(totalCosts);
   //removes button row
