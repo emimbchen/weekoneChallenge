@@ -32,6 +32,7 @@ $('input').val('');
 //calculate the costs
 totalCosts = calculateCosts(salary);
 $('span').text(totalCosts);
+return totalCosts;
 }
 
 //function for the math
@@ -43,9 +44,13 @@ return $currentTotal;
 }
 
 function removeButton(){
-  //subtracts from totalCosts
   var $buttonRow = $(this).parent().parent();
-  var $income = $($buttonRow).children()[4];
+  var $rowData = $($buttonRow).children()[4];
+  var $income = parseInt( $($rowData).text() );
+  $income = $income/12;
+  totalCosts= totalCosts - $income;
+  $('span').text(totalCosts);
   //removes button row
   $($buttonRow).remove();
+  return totalCosts;
 }
