@@ -1,0 +1,42 @@
+body {
+margin: 0px 15% 0px 15%;
+}
+
+#header {
+  background-color: #163333;
+  color: white;
+  height: 70px;
+  padding-top: 3px;
+  padding-bottom:10px;
+}
+
+#inputDiv {
+  height: 25px;
+  background-color: #C1C8C0;
+  padding: 20px;
+}
+
+table {
+  outline-color: #041A1F;
+  color: #041A1F;
+}
+
+tr:nth-child(even) {
+  background-color: #C1C8C0;
+}
+
+th {
+  padding: 10px 20px 10px 0px;
+}
+
+td {
+  padding-right: 10px 20px 10px 0px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  color: #041A1F;
+}
