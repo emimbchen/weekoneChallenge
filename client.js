@@ -9,7 +9,7 @@ $('table').on('click', 'button', removeButton);
 }
 
 var totalCosts;
-//when buton is clicked add all inputs to table
+//when button is clicked add all inputs to table
 function buttonClick(){
 //resets rowData per click
 var rowData;
