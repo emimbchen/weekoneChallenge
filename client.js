@@ -5,24 +5,26 @@ $(queryGo);
 function queryGo(){
   console.log('query went');
 $('button').on('click', buttonClick);
+$('table').on('click', 'button', removeButton);
 }
 
 var salaryArray = [];
+var totalCosts;
 //when buton is clicked add all inputs to table
 function buttonClick(){
 //resets rowData per click
-var rowData = "";
-//creates row via for loop
+var rowData = '';
+//creates row via "for" loop
  var $inputArray = $('#inputDiv').children();
- for(var i = 0; i < ($inputArray).length; i++){
+ for(var i = 0; i < ($inputArray).length - 1; i++){
  var inputValue = $($inputArray[i]).val();
  rowData+= "<td>" + inputValue + "</td>";
  }
  //append row after array is complete
+ //adds the remove button to row
  var trow = $('table').append('<tr>' + rowData + '<td>' + '<button>' + 'Remove' +'</button>'+ '</td>' + '</tr>');
 
 //create an array of salaries
-
  var salary = parseInt($($inputArray[4]).val());
     salaryArray.push(salary);
 
@@ -30,9 +32,9 @@ var rowData = "";
 $('input').val('');
 
 //calculate the costs
-var totalCosts;
 totalCosts = calculateCosts(salaryArray);
 $('span').text(totalCosts);
+return totalCosts;
 }
 
 //function for the math
@@ -42,4 +44,14 @@ var total = 0;
     total += array[j];
 }
 return total;
+}
+
+//removes tr when remove button is clicked
+function removeButton(){
+  var $buttonRow = $(this).parent().parent();
+  console.log(parseInt($(this).closest().val()));
+  $($buttonRow).remove();
+
+  //try to id the td of tr of this.
+
 }
